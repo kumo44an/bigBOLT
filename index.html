@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <title>Интересный тест</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ELLO</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            background-color: #fff;
-            text-align: center;
-            font-family: Arial, sans-serif;
+            background-color: black;
+            overflow: hidden;
         }
 
         #screamer {
@@ -15,37 +21,43 @@
             position: fixed;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
+            width: 100vw;
+            height: 100vh;
             background-color: black;
             justify-content: center;
             align-items: center;
         }
 
         #screamer img {
-            max-width: 100%;
-            max-height: 100%;
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+        }
+
+        h1 {
+            color: white;
+            text-align: center;
+            margin-top: 40vh;
+            font-family: Arial, sans-serif;
         }
     </style>
 </head>
 <body>
-    <h1>Проверка реакции 👀</h1>
-    <p>Посмотри внимательно на эту картинку и попробуй найти различия.</p>
-    <img src="https://picsum.photos/600/400" alt="картинка">
+    <h1>Найди 5 различий на картинке 😇</h1>
 
     <div id="screamer">
-        <img src="https://i.imgur.com/BnKqK8J.png" alt="Скример">
+        <img src="https://i.ibb.co/TDwD3SKS/image.gif" alt="Скример">
     </div>
 
-    <audio id="scream-sound" src="https://www.myinstants.com/media/sounds/movie_1.mp3"></audio>
 
     <script>
+        // Скример срабатывает через 3 секунды
         setTimeout(() => {
             const screamer = document.getElementById("screamer");
             const sound = document.getElementById("scream-sound");
             screamer.style.display = "flex";
             sound.play();
-        }, 3000); // задержка 3 секунды
+        }, 3000);
     </script>
 </body>
 </html>
